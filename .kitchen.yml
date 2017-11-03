@@ -24,9 +24,9 @@ provisioner:
       base:
         "*":
           - kibana
-          - kibana_debian_repo
+          - kibana_ubuntu_repo
   pillars-from-files:
-    kibana_debian_repo.sls: tests/pillar/kibana_debian_repo.sls
+    kibana_ubuntu_repo.sls: tests/pillar/kibana_ubuntu_repo.sls
   dependencies:
     - name: linux
       repo: git
@@ -37,15 +37,15 @@ verifier:
   sudo: true
 
 platforms:
-  - name: <%=ENV['PLATFORM'] || 'ubuntu-xenial'%>
+  - name: 'ubuntu-xenial'
     driver_config:
-      image: <%=ENV['PLATFORM'] || 'trevorj/salty-whales:xenial'%>
       platform: ubuntu
+      provision_command:
+        - apt-get update && apt-get install -y locales git && locale-gen en_US.UTF-8
+
 
 suites:
-
   - name: kibana_server
     provisioner:
       pillars-from-files:
         kibana.sls: tests/pillar/kibana_server.sls
-# vim: ft=yaml sw=2 ts=2 sts=2 tw=125

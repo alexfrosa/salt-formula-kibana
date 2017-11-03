@@ -1,4 +1,3 @@
-
 {%- if pillar.kibana is defined %}
 include:
 {%- if pillar.kibana.server is defined %}

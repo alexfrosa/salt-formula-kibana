@@ -1,6 +1,11 @@
-
 {% set server = salt['grains.filter_by']({
     'Debian': {
+        'pkgname': 'kibana',
+        'service': 'kibana',
+        'configpath': '/opt/kibana/config/kibana.yml',
+        'default_app_id': 'discover',
+    },
+    'Ubuntu': {
         'pkgname': 'kibana',
         'service': 'kibana',
         'configpath': '/opt/kibana/config/kibana.yml',
