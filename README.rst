@@ -3,7 +3,7 @@
 Kibana
 ======
 
-Kibana is an open source (Apache Licensed), browser based analytics and search interface to Logstash and other timestamped data sets stored in ElasticSearch. With those in place Kibana is a snap to setup and start using (seriously). Kibana strives to be easy to get started with, while also being flexible and powerful
+Kibana is an open source (Apache Licensed), browser based analytics and search interface to data sets stored in ElasticSearch. With those in place Kibana is a snap to setup and start using (seriously). Kibana strives to be easy to get started with, while also being flexible and powerful
 
 Sample pillar
 =============
